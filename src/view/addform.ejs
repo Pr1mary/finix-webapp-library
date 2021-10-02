@@ -13,21 +13,22 @@
         <h1>Project Pheonix Dashboard</h1>
     </div>
     <div class="content">
-        <div class="field">
-            <label class="label">App name</label>
-            <div class="control">
-                <input type="text" class="input input-custom" placeholder="Insert app name">
+        <form action="/add" method="POST">
+            <div class="field">
+                <label for="AppNameInput" class="label">App name</label>
+                <div class="control">
+                    <input name="AppNameInput" type="text" class="input input-custom" placeholder="Insert app name">
+                </div>
             </div>
-        </div>
-        <div class="field">
-            <label class="label">App url</label>
-            <div class="control">
-                <input type="text" class="input input-custom" placeholder="Insert app url">
+            <div class="field">
+                <label for="AppUrlInput" class="label">App url</label>
+                <div class="control">
+                    <input name="AppUrlInput" type="text" class="input input-custom" placeholder="Insert app url">
+                </div>
             </div>
-        </div>
-        <div class="field button-zone">
-            <button class="button">Add web app</button>
-        </div>
+            <div class="field button-zone">
+                <button class="button" type="submit">Add web app</button>
+            </div></form>
     </div>
     <div class="footer">
 

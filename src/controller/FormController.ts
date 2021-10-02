@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import { connect } from "mongoose";
+import AppModel from "../model/Model";
 
 class CommandController {
 
@@ -7,11 +8,21 @@ class CommandController {
         res.render("addform");
     }
 
-    sendForm(req: Request, res: Response){
+    async sendForm(req: Request, res: Response){
+        
+        const appData = new AppModel({
+            app_name: req.body.AppNameInput,
+            app_url: req.body.AppUrlInput,
+            created_at: new Date(),
+            updated_at: new Date()
+        });
 
+        await appData.save();
+
+        res.redirect("/");
     }
 
-    editForm(req: Request, res: Response){
+    async editForm(req: Request, res: Response){
 
     }
 

@@ -1,22 +1,18 @@
 import { Schema, model } from "mongoose"
 
-class AppModel {
+const appSchema = new Schema({
+    app_name: {
+        type: String,
+        required: true
+    },
+    app_url: {
+        type: String,
+        required: true
+    },
+    created_at: Date,
+    updated_at: Date
+});
 
-    private appSchema = new Schema({
-        app_name: {
-            type: String,
-            required: true
-        },
-        app_url: {
-            type: String,
-            required: true
-        },
-        created_at: Date,
-        edited_at: Date
-    });
+const appModel = model("appModel", appSchema);
 
-    public appModel = model("appModel", this.appSchema);
-
-}
-
-export = AppModel;
+export = appModel;
