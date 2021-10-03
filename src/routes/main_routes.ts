@@ -11,7 +11,7 @@ router.get("/add", formCtrl.getForm);
 
 router.post("/add", formCtrl.sendForm);
 
-router.patch("/edit/:id", formCtrl.editForm);
+router.get("/edit/:id", formCtrl.editForm);
 
 router.delete("/delete/:id", homeCtrl.deleteApp);
 

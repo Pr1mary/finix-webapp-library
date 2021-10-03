@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="/css/homestyle.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/js/homescript.js"></script>
+    <title>Home</title>
+</head>
+<body>
+    <div class="header">
+        <h1>Project Pheonix Dashboard</h1>
+        <a class="button" href="/add">add new app</a>
+    </div>
+    <div class="content">
+        <% appList.forEach(app => { %>
+            <div class="card">
+                <div class="card-content">
+                    <div class="content">
+                        <h2 class="app-title"><%= app.app_name %> </h2>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a class="card-footer-item" href="<%= app.app_url %>">Open</a>
+                    <a id="editBtn" class="card-footer-item" href="/edit/<%= app._id %>">Edit</a>
+                    <a id="deleteBtn" class="card-footer-item" onclick="deleteItem('/delete/<%= app.id %>')">Delete</a>
+                </div>
+            </div>
+
+            <% if(appList.indexOf(app)/4 == 1) { %>
+            
+                <div class="flex-break"></div>
+
+            <% } %>
+            
+        <% });%>
+    </div>
+</body>
+</html>

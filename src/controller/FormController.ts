@@ -1,11 +1,10 @@
 import { Request, Response } from "express";
-import { connect } from "mongoose";
 import AppModel from "../model/Model";
 
-class CommandController {
+class FormController {
 
     getForm(req: Request, res: Response){
-        res.render("addform");
+        res.render("FormView");
     }
 
     async sendForm(req: Request, res: Response){
@@ -24,8 +23,16 @@ class CommandController {
 
     async editForm(req: Request, res: Response){
 
+        const appId = req.params.id;
+
+        
+
+        res.render("FormView", {
+
+        });
+
     }
 
 }
 
-export = CommandController;
+export = FormController;
