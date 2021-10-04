@@ -1,6 +1,23 @@
+/* global class */
+
 .content {
-    width: 100%;
     padding: 25px;
+}
+
+.header {
+    margin: 25px
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+/* for home view */
+
+.content-home {
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
 }
@@ -10,21 +27,11 @@
     height: 0;
 }
 
-.header {
-    margin: 25px
-}
-
 .card {
     flex: 1;
     min-width: 250px;
     max-width: 500px;
     margin: 10px;
-}
-
-.footer {
-    position: absolute;
-    margin-bottom: 0%;
-    width: 100%;
 }
 
 .card-footer-item {
@@ -38,6 +45,24 @@
     text-align: center;
 }
 
+/* for form view */
+
+.input {
+    width: 100%;
+}
+
+.button-zone {
+    margin-top: 50px;
+}
+
+.box {
+    margin-left: auto;
+    margin-right: auto;
+    width: 750px;
+}
+
+/* for mobile support */
+
 @media (max-width: 800px) {
     /* CSS that should be displayed if width is equal to or less than 800px goes here */
     .card {
@@ -45,5 +70,15 @@
         margin-left: auto;
         margin-right: auto;
     }
+
+    .input {
+        width: 100%;
+    }
+
+    .box {
+        width: 100%;
+    }
     
 }
+
+

@@ -1,6 +1,6 @@
 import express from "express";
 import path from "path";
-import router from "./routes/main_routes";
+import router from "./routes/MainRoutes";
 import { connect } from "mongoose";
 
 connect("mongodb://localhost:27017/phoenix-dashboard")
