@@ -7,12 +7,11 @@ const homeCtrl = new HomeController();
 const formCtrl = new FormController();
 
 router.get("/", homeCtrl.getHome);
-router.get("/add", formCtrl.getForm);
+router.get("/add", formCtrl.getNewForm);
+router.get("/edit/:id", formCtrl.getEditForm);
 
-router.post("/add", formCtrl.sendForm);
-
-router.patch("/edit/:id", formCtrl.editForm);
-
-router.delete("/delete/:id", homeCtrl.deleteApp);
+router.post("/api/add", formCtrl.sendNewForm);
+router.patch("/api/edit/:id", formCtrl.sendEditForm);
+router.delete("/api/delete/:id", homeCtrl.deleteApp);
 
 export = router;

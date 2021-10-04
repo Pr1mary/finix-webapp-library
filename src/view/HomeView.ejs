@@ -1,0 +1,37 @@
+<%- include("template/PageTemplate"); %> 
+
+<div class="header">
+    <h1>Project Pheonix Dashboard</h1>
+    <a class="button" href="/add">add new app</a>
+</div>
+<div class="content content-home">
+    <% appList.forEach(app => { %>
+        <div class="card">
+            <div class="card-content">
+                <div class="content">
+                    <h2 class="app-title"><%= app.app_name %></h2>
+                </div>
+            </div>
+            <div class="card-footer">
+                <a class="card-footer-item" href="<%= app.app_url %>" target="_blank">Open</a>
+                <a id="editBtn" class="card-footer-item" href="/edit/<%= app._id %>">Edit</a>
+                <a id="deleteBtn" class="card-footer-item" onclick="remItem('<%= htmlFormat.targetUrl %><%= app.id %>')">Delete</a>
+            </div>
+        </div>
+
+        <% if(appList.indexOf(app)/4 == 1) { %>
+            
+            <div class="flex-break"></div>
+
+        <% } %>
+            
+    <% });%>
+</div>
+<div class="footer">
+    <p>
+        Copyright by Muhammad Rafli "pr1mary" Satriandi
+    </p>
+    <p>
+        Licensed under GNU GPLv3
+    </p>
+</div>

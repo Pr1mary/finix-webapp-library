@@ -1,31 +1,57 @@
 import { Request, Response } from "express";
-import { connect } from "mongoose";
 import AppModel from "../model/Model";
 
-class CommandController {
+class FormController {
 
-    getForm(req: Request, res: Response){
-        res.render("addform");
+    getNewForm(req: Request, res: Response){
+        res.render("FormView", {
+            htmlFormat: {
+                targetUrl: "/api/add",
+                methodType: "POST",
+                submitText: "Add new webapp"
+            },
+            data: []
+        });
     }
 
-    async sendForm(req: Request, res: Response){
-        
+    async sendNewForm(req: Request, res: Response){
         const appData = new AppModel({
             app_name: req.body.AppNameInput,
             app_url: req.body.AppUrlInput,
             created_at: new Date(),
             updated_at: new Date()
         });
-
         await appData.save();
-
-        res.redirect("/");
+        res.send({
+            nextUrl: "/"
+        });
     }
 
-    async editForm(req: Request, res: Response){
+    async getEditForm(req: Request, res: Response){
+        const appId = req.params.id;
+        const appData = await AppModel.findById(appId).exec();
+        res.render("FormView", {
+            htmlFormat: {
+                targetUrl: "/api/edit/"+appId,
+                methodType: "PATCH",
+                submitText: "Edit existing webapp"
+            },
+            data: appData
+        });
+    }
 
+    async sendEditForm(req: Request, res: Response){
+        const appId = req.params.id;
+        await AppModel.findByIdAndUpdate(appId, {
+            app_name: req.body.AppNameInput,
+            app_url: req.body.AppUrlInput,
+            updated_at: new Date()
+        });
+        res.send({
+            nextUrl: "/"
+        });
     }
 
 }
 
-export = CommandController;
+export = FormController;
