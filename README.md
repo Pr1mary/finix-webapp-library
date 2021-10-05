@@ -1,2 +1,2 @@
-# project-phoenix-dashboard
-Library dashboard for all of deployed apps in private cloud
+# Finix WebApp Library
+Library dashboard to manage all of deployed apps in server

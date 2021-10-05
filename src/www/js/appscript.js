@@ -1,3 +1,17 @@
+$(document).ready(() => {
+
+    $("#submitForm").prop("disabled", true);
+
+    const validateInput = () => {
+        const isDisabled = $('#inputAppName').val().trim() === '' || $('#inputAppUrl').val().trim() === '';
+        $('#submitForm').prop('disabled', isDisabled);
+    }
+
+    $('#inputAppName').on('keyup', validateInput);
+    $('#inputAppUrl').on('keyup', validateInput);
+  
+});
+
 
 const cmdItem = (targetUrl, methodType) => {
 
