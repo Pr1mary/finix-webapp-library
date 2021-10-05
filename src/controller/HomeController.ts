@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import AppModel from "../model/Model";
+import AppModel from "../model/AppModel";
 
 class HomeController {
 
