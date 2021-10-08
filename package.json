@@ -4,9 +4,9 @@
   "description": "Library dashboard for all of deployed apps in private cloud",
   "main": "app.js",
   "scripts": {
-    "start": "ts-node src/app.ts",
+    "start": "node bin/build/app.js",
     "dev": "nodemon src/app.ts",
-    "build": "tsc --project ./"
+    "build": "tsc --project ./ && copyfiles -u 1 src/view/**/*.ejs src/view/*.ejs src/www/**/*.css src/www/**/*.js build/"
   },
   "repository": {
     "type": "git",
@@ -30,6 +30,7 @@
     "@types/express": "^4.17.13",
     "@types/multer": "^1.4.7",
     "@types/node": "^16.10.2",
+    "copyfiles": "^2.4.1",
     "mongoose": "^6.0.8",
     "nodemon": "^2.0.13"
   }

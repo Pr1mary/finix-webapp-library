@@ -1,10 +1,14 @@
 <%- include("template/PageTemplate") %> 
 
 <div class="header">
-    <a class="title header-title is-4" href="/">Finix WebApp Library</a>
+    <h1 class="title header-title is-4">Finix WebApp Library</h1>
 </div>
 <div class="content">
     <div class="box">
+        <div class="box-header">
+            <a class="back-button" href="/">↩ Back to dashboard</a>
+            <h1 class="title box-title"><%= htmlFormat.formTitle %></h1>
+        </div>
         <div class="field">
             <label for="AppNameInput" class="label">App name</label>
             <div class="control">
@@ -18,7 +22,7 @@
             </div>
         </div>
         <div class="field button-zone">
-            <button class="button is-primary" type="submit" onclick="cmdItem('<%= htmlFormat.targetUrl %>', '<%= htmlFormat.methodType %>')"><%= htmlFormat.submitText %></button>
+            <button id="submitForm" class="button is-primary" type="submit" onclick="cmdItem('<%= htmlFormat.targetUrl %>', '<%= htmlFormat.methodType %>')">Save changes</button>
         </div>
     </div>
 </div>

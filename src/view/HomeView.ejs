@@ -1,22 +1,22 @@
 <%- include("template/PageTemplate"); %> 
 
 <div class="header">
-    <a class="title header-title is-4" href="/">Finix WebApp Library</a>
+    <h1 class="title header-title is-4">Finix WebApp Library</h1>
     <a class="button is-link header-button" href="/add">add new app</a>
 </div>
 <div class="content content-home">
     <% appList.forEach(app => { %>
         <div class="card">
-            <div class="card-content">
-                <div class="content">
+            <a class="open-app-button" href="<%= app.app_url %>">
+                <div class="card-content">
                     <h2 class="app-title"><%= app.app_name %></h2>
                 </div>
-            </div>
+            </a>
             <div class="card-footer">
-                <a class="card-footer-item" href="<%= app.app_url %>" target="_blank">Open</a>
+                <!-- <a class="card-footer-item" href="<%= app.app_url %>" target="_blank">Open</a> -->
                 <a id="editBtn" class="card-footer-item" href="/edit/<%= app._id %>">Edit</a>
-                <a id="deleteBtn" class="card-footer-item" onclick="remItem('<%= htmlFormat.targetUrl %><%= app.id %>')">Delete</a>
+                <a id="deleteBtn" class="card-footer-item delete-button" onclick="remItem('<%= htmlFormat.targetUrl %><%= app.id %>')">Delete</a>
             </div>
         </div>
-    <% });%>
+    <% }); %>
 </div>

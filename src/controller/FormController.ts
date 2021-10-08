@@ -8,7 +8,7 @@ class FormController {
             htmlFormat: {
                 targetUrl: "/api/add",
                 methodType: "POST",
-                submitText: "Add new webapp"
+                formTitle: "Add new webapp"
             },
             data: []
         });
@@ -34,7 +34,7 @@ class FormController {
             htmlFormat: {
                 targetUrl: "/api/edit/"+appId,
                 methodType: "PATCH",
-                submitText: "Edit existing webapp"
+                formTitle: "Edit existing webapp"
             },
             data: appData
         });
