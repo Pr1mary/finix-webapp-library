@@ -5,7 +5,7 @@ import path from "path";
 import router from "./routes/MainRoutes";
 import { connect } from "mongoose";
 
-connect(""+process.env.MONGO_URI+process.env.MONGO_DB)
+connect(""+process.env.MONGO_URI+process.env.MONGO_COL)
 .catch(e => {
     console.log(e);
 });

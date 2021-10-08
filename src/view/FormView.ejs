@@ -7,7 +7,7 @@
     <div class="box">
         <div class="box-header">
             <a class="back-button" href="/">↩ Back to dashboard</a>
-            <h1 class="title box-title">Add new webapp</h1>
+            <h1 class="title box-title"><%= htmlFormat.formTitle %></h1>
         </div>
         <div class="field">
             <label for="AppNameInput" class="label">App name</label>
@@ -22,7 +22,7 @@
             </div>
         </div>
         <div class="field button-zone">
-            <button id="submitForm" class="button is-primary" type="submit" onclick="cmdItem('<%= htmlFormat.targetUrl %>', '<%= htmlFormat.methodType %>')"><%= htmlFormat.submitText %></button>
+            <button id="submitForm" class="button is-primary" type="submit" onclick="cmdItem('<%= htmlFormat.targetUrl %>', '<%= htmlFormat.methodType %>')">Save changes</button>
         </div>
     </div>
 </div>

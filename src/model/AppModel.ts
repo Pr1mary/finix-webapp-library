@@ -13,6 +13,6 @@ const appSchema = new Schema({
     updated_at: Date
 });
 
-const appModel = model("appModel", appSchema);
+const appModel = model(""+process.env.MONGO_DOC, appSchema);
 
 export = appModel;

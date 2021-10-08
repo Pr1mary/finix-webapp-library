@@ -21,6 +21,12 @@ html {
 
 /* for home view */
 
+.open-app-button {
+    width: 100%;
+    height: 100%;
+    padding: 25px;
+}
+
 .header-title {
     margin: 25px;
     padding-top: 6px;
@@ -56,11 +62,33 @@ html {
     bottom: 0;
 }
 
+.open-app-area {
+    padding: 25px;
+    margin: 0px;
+}
+
+.card-content {
+    margin: 0px;
+}
+
+.open-app-container {
+    margin: 0px;
+}
+
 .app-title {
+    margin-bottom: 0px;
     width: 100%;
     height: 100%;
     word-wrap: break-word;
     text-align: center;
+}
+
+.delete-button {
+    color: rgb(241, 70, 104);
+}
+
+.delete-button:hover {
+    color: rgb(204, 15, 53);
 }
 
 /* for form view */
