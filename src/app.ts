@@ -5,7 +5,14 @@ import path from "path";
 import router from "./routes/MainRoutes";
 import { connect } from "mongoose";
 
-connect(""+process.env.MONGO_URI+process.env.MONGO_COL)
+connect(""+process.env.MONGO_URI, {
+    dbName: process.env.MONGO_COL,
+    user: process.env.MONGO_USER,
+    pass: process.env.MONGO_PASS,
+})
+.then(cb => {
+    console.log("Database connected!");
+})
 .catch(e => {
     console.log(e);
 });
